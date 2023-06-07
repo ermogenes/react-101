@@ -21,13 +21,6 @@ Referências:
 
 Ferramentas:
 
-<iframe src="https://codesandbox.io/embed/dazzling-fermi-w04om0?autoresize=1&fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="dazzling-fermi-w04om0"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
-
 - https://codesandbox.io/
 - [ESLint VsCode extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Prettier VsCode extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
@@ -110,13 +103,44 @@ Ferramentas:
 Tópicos:
 
 - [Projeto local](https://docs.expo.dev/get-started/installation/)
-- []
+- [Executar no Expo Go (LAN)](https://docs.expo.dev/get-started/expo-go/)
+- [Executar no Expo Go (Tunnel)](https://docs.expo.dev/more/expo-cli/#tunneling)
+- [Build com EAS Build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Deploy com EAS Submit](https://docs.expo.dev/submit/introduction/)
+- [Prebuild](https://docs.expo.dev/more/expo-cli/#prebuild)
+- [Build e deploy com AppCenter](https://learn.microsoft.com/pt-br/appcenter/)
+
+- [Estrutura do projeto](https://docs.expo.dev/develop/project-structure/)
+- [SafeArea](https://docs.expo.dev/develop/user-interface/safe-areas/)
+- [Local Storage](https://docs.expo.dev/develop/user-interface/store-data/)
+- [Ícones](https://docs.expo.dev/guides/icons/)
+- [OAuth](https://docs.expo.dev/guides/authentication/)
+
+- [Expo SDK](https://docs.expo.dev/versions/latest/)
+
+  - [AuthSession](https://docs.expo.dev/versions/latest/sdk/auth-session/)
+  - [AV (vídeo)](https://docs.expo.dev/versions/latest/sdk/av/)
+  - [Crypto](https://docs.expo.dev/versions/latest/sdk/crypto/)
+  - [Font](https://docs.expo.dev/versions/latest/sdk/font/)
+  - [Linking](https://docs.expo.dev/versions/latest/sdk/linking/)
+  - [Location](https://docs.expo.dev/versions/latest/sdk/location/)
+  - [Notifications](https://docs.expo.dev/versions/latest/sdk/notifications/)
+  - [Speech](https://docs.expo.dev/versions/latest/sdk/speech/)
+  - [SplashScreen](https://docs.expo.dev/versions/latest/sdk/splash-screen/)
+
+- [Expo Router](https://docs.expo.dev/guides/routing-and-navigation/)
 
 ## Outros
 
 Navegação:
 
 - [React Navigation](https://reactnavigation.org/docs/getting-started)
+  - [Stack](https://reactnavigation.org/docs/native-stack-navigator)
+  - [Tabs](https://reactnavigation.org/docs/bottom-tab-navigator)
+  - [Drawer](https://reactnavigation.org/docs/drawer-navigator)
+  - [Navegação](https://reactnavigation.org/docs/navigating)
+  - [Parâmetros](https://reactnavigation.org/docs/params)
+  - [Aninhamento](https://reactnavigation.org/docs/nesting-navigators)
 
 UI:
 
@@ -127,7 +151,17 @@ Mapas:
 
 - [React Native Maps](https://github.com/react-native-maps/react-native-maps)
 
+Chat:
+
+- [React Native Gifted Chat](https://github.com/FaridSafi/react-native-gifted-chat)
+- [@flyerhq/react-native-chat-ui](https://github.com/flyerhq/react-native-chat-ui)
+
 Utils:
 
 - [Lodash](https://lodash.com/docs)
 - [Day.js](https://day.js.org/)
+
+Stores:
+
+- [Redux](https://redux.js.org/)
+- [Zustand](https://zustand-demo.pmnd.rs/)
