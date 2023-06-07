@@ -100,7 +100,7 @@ Ferramentas:
 - [Expo Tools VsCode extension](https://marketplace.visualstudio.com/items?itemName=expo.vscode-expo-tools)
 - [ngrok](https://ngrok.com/)
 
-Tópicos:
+Gestão do projeto:
 
 - [Projeto local](https://docs.expo.dev/get-started/installation/)
 - [Executar no Expo Go (LAN)](https://docs.expo.dev/get-started/expo-go/)
@@ -109,15 +109,18 @@ Tópicos:
 - [Deploy com EAS Submit](https://docs.expo.dev/submit/introduction/)
 - [Prebuild](https://docs.expo.dev/more/expo-cli/#prebuild)
 - [Build e deploy com AppCenter](https://learn.microsoft.com/pt-br/appcenter/)
-
 - [Estrutura do projeto](https://docs.expo.dev/develop/project-structure/)
+
+Outros:
+
 - [SafeArea](https://docs.expo.dev/develop/user-interface/safe-areas/)
 - [Local Storage](https://docs.expo.dev/develop/user-interface/store-data/)
 - [Ícones](https://docs.expo.dev/guides/icons/)
 - [OAuth](https://docs.expo.dev/guides/authentication/)
 
-- [Expo SDK](https://docs.expo.dev/versions/latest/)
+Utils:
 
+- [Expo SDK](https://docs.expo.dev/versions/latest/)
   - [AuthSession](https://docs.expo.dev/versions/latest/sdk/auth-session/)
   - [AV (vídeo)](https://docs.expo.dev/versions/latest/sdk/av/)
   - [Crypto](https://docs.expo.dev/versions/latest/sdk/crypto/)
@@ -127,7 +130,6 @@ Tópicos:
   - [Notifications](https://docs.expo.dev/versions/latest/sdk/notifications/)
   - [Speech](https://docs.expo.dev/versions/latest/sdk/speech/)
   - [SplashScreen](https://docs.expo.dev/versions/latest/sdk/splash-screen/)
-
 - [Expo Router](https://docs.expo.dev/guides/routing-and-navigation/)
 
 ## Outros
