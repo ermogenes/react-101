@@ -132,10 +132,130 @@ Ferramentas:
 
 Tópicos:
 
-- [Componentes](https://react.dev/learn#components)
-- [JSX](https://react.dev/learn#writing-markup-with-jsx)
-- [Estilos (`className`, `style`, `link`, ...)](https://react.dev/learn#adding-styles)
+- [Componentes](https://react.dev/learn#components) e [JSX](https://react.dev/learn#writing-markup-with-jsx)
+
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-components-3bsyjg?file=/src/App.js)
+
+`index.html`
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React App</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+`index.js`
+
+```jsx
+import { createRoot } from "react-dom/client";
+
+import App from "./App";
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+root.render(<App />);
+```
+
+`App.js`
+
+```jsx
+const Titulo = () => {
+  return <h1>Exemplo de uso de componentes</h1>;
+};
+
+const Texto = () => {
+  return (
+    <>
+      <p>
+        Lorem ipsum <em>dolor sit amet</em>, consectetur adipiscing elit.
+      </p>
+      <p>
+        Donec sollicitudin ligula mauris, a ultricies lorem scelerisque quis.
+        Mauris ac urna at elit aliquam hendrerit at sit amet purus.
+      </p>
+      <p>Sed nec leo et nisl cursus tempor.</p>
+    </>
+  );
+};
+
+export default function App() {
+  return (
+    <div>
+      <Titulo />
+      <p>Acima temos um componente. Abaixo, outro.</p>
+      <Texto />
+    </div>
+  );
+}
+```
+
+- [Estilos (`className`, `style`, ...)](https://react.dev/learn#adding-styles)
+
+[Ver no CodeSandbox](https://codesandbox.io/s/beautiful-shadow-t1wynk?file=/src/App.js)
+
+`styles.css`
+
+```css
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+code {
+  background-color: #ccc;
+  font-size: large;
+}
+```
+
+`App.js`
+
+```jsx
+import "./styles.css";
+
+export default function App() {
+  return (
+    <div className="App">
+      <h1>Usando estilos</h1>
+      <p>
+        Usando <code>import</code> e <code>className</code>
+      </p>
+      <p style={{ color: "red", textDecoration: "underline" }}>
+        Usando um objeto <code>style</code>
+      </p>
+    </div>
+  );
+}
+```
+
 - [Renderizando dados](https://react.dev/learn#displaying-data)
+
+[Ver no CodeSandbox](https://codesandbox.io/s/rough-resonance-f0r7hd?file=/src/App.js)
+
+```jsx
+const alinhamento = "center";
+const corTexto = "#008800";
+
+export default function App() {
+  const texto = "Texto e atributo armazenados em variáveis";
+  return (
+    <div>
+      <h1>Renderizando dados</h1>
+      <p align={alinhamento} style={{ color: corTexto }}>
+        {texto}
+      </p>
+    </div>
+  );
+}
+```
+
 - [Renderização condicional](https://react.dev/learn#conditional-rendering)
 - [Renderização de listas](https://react.dev/learn#rendering-lists)
 - [Eventos](https://react.dev/learn#responding-to-events)
