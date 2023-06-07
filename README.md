@@ -28,13 +28,94 @@ Ferramentas:
 Tópicos:
 
 - [Optional chaining `?.`](https://javascript.info/optional-chaining)
-- [Desconstrução](https://javascript.info/destructuring-assignment)
+
+```js
+// Retorna undefined caso um valor não exista dentro de um objeto
+let x;
+console.log(x.foo); // exception: Cannot read properties of undefined (reading 'foo')
+console.log(x?.foo); // undefined
+
+// A variável deve estar declarada
+console.log(y.foo); // exception: y is not defined
+console.log(y?.foo); // exception: y is not defined
+```
+
 - [Null coalesce](https://javascript.info/nullish-coalescing-operator)
+
+```js
+let name = null;
+let socialName;
+let nickname = "n00b";
+
+console.log(socialName ?? name ?? "Anonymous"); // "Anonymous"
+console.log(socialName ?? nickname ?? name ?? "Anonymous"); // "n00b"
+```
+
 - [Condicional com `&&` (AND)](https://javascript.info/logical-operators#and-finds-the-first-falsy-value) e com [`?:` (`if` ternário)](https://javascript.info/ifelse#conditional-operator)
-- [Spread](https://javascript.info/rest-parameters-spread)
-- [Promises](https://javascript.info/promise-basics)
-- [Fetch API](https://javascript.info/fetch)
+
+```js
+const isPolite = true;
+
+isPolite && console.log("hello"); // exibe "hello"
+!isPolite && console.log("f@#$ u"); // não exibe nada
+
+isPolite ? console.log("hello") : console.log("f@#$ u"); // exibe "hello"
+```
+
+- [Desestruturação](https://javascript.info/destructuring-assignment) e [Spread](https://javascript.info/rest-parameters-spread)
+
+```js
+// Desestruturando arrays
+const data = ["SP", 2023];
+const [local, year] = data;
+console.log(`${local}, em ${year}`); // exibe "SP, em 2023"
+
+// Desestruturando objetos
+const user = { id: 1, age: 25, name: "Zé" };
+const { id, name } = user;
+console.log(id, name); // exibe "1 'Zé'"
+
+// Invertendo valores com desestruturação
+let a = 1;
+let b = 2;
+[b, a] = [a, b];
+console.log(a, b); // exibe "2 1"
+```
+
+```js
+// Spread em arrays
+const data = ["SP", 2023, "outro valor qualquer"];
+const [local, ...details] = data;
+console.log(local); // exibe "SP"
+console.log(details); // exibe [2023, "outro valor qualquer"]
+
+// Spread em objetos
+const user = { id: 1, age: 25, name: "Zé" };
+const { id, ...userData } = user;
+console.log(userData); // exibe {age: 25, name: 'Zé'}
+```
+
+- [Promises](https://javascript.info/promise-basics) e [Fetch API](https://javascript.info/fetch)
+
+```js
+fetch("https://api.github.com/users/ermogenes") // retorna uma promise
+  .then((response) => response.json()) // retorna outra promise
+  .then((result) => console.log(result.company)); // exibe "Prodam"
+```
+
 - [Métodos funcionais (`map`, `filter`, ...)](https://javascript.info/array-methods)
+
+```js
+// Transforma cada item em um valor novo
+["a", "b", "c"].map((n) => n.toUpperCase()); // ['A', 'B', 'C']
+
+// Filtra o arranjo
+[(1, 2, 3, 4, 5)].filter((x) => x % 2 == 0); // [2, 4]
+
+// Encontra o índice de um valor
+["a", "b", "c"].findIndex((n) => n === "b"); // 1
+```
+
 - [Módulos](https://javascript.info/modules-intro)
 
 ## React
