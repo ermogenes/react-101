@@ -129,6 +129,7 @@ Ferramentas:
 - https://codesandbox.io/
 - [Projeto local](https://react.dev/learn/start-a-new-react-project)
 - [ES7+ React/Redux/React-Native snippets VsCode extension](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+- [HTML to JSX converter](https://transform.tools/html-to-jsx)
 
 Tópicos:
 
@@ -292,6 +293,41 @@ export default function App() {
 }
 ```
 
+- [Children](https://react.dev/learn#conditional-rendering)
+
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-children-6u7s3v?file=/src/App.js)
+
+```jsx
+const TitleText = ({ color, children }) => (
+  <span style={{ color, fontWeight: "bold" }}>{children}</span>
+);
+
+const SquareBox = (props) => {
+  const boxStyle = {
+    // estilos omitidos, veja no código completo
+  };
+  return (
+    <div style={boxStyle}>
+      <TitleText color={props.text}>{props.children}</TitleText>
+    </div>
+  );
+};
+
+export default function App() {
+  return (
+    <div>
+      <h1>Children</h1>
+      <SquareBox bg="#ff8888" text="#0000ff">
+        Box 1
+      </SquareBox>
+      <SquareBox bg="#00ff88" text="#ff0000">
+        Box 2
+      </SquareBox>
+    </div>
+  );
+}
+```
+
 - [Renderização condicional](https://react.dev/learn#conditional-rendering)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-renderizacao-condicional-6mkzr6?file=/src/App.js)
@@ -359,7 +395,7 @@ export default function App() {
 
 - [Eventos](https://react.dev/learn#responding-to-events)
 
-[Ver no CodeSandbox](https://codesandbox.io/s/react-101-eventos-oc9jkj?file=/src/App.js:0-298)
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-eventos-oc9jkj?file=/src/App.js)
 
 ```jsx
 export default function App() {
@@ -377,7 +413,7 @@ export default function App() {
 
 - [State](https://react.dev/learn#updating-the-screen)
 
-[Ver no CodeSandbox](https://codesandbox.io/s/react-101-state-eel9wm?file=/src/App.js:0-501)
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-state-eel9wm?file=/src/App.js)
 
 ```jsx
 import { useState } from "react";
@@ -400,12 +436,237 @@ export default function App() {
 }
 ```
 
-# TODO: Passando estado em propriedade
-
 - [Context](https://react.dev/learn/passing-data-deeply-with-context)
+
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-context-cqzon4?file=/src/App.js)
+
+`App.js`
+
+```jsx
+import { UserContextProvider } from "./UserContext";
+
+import Routes from "./Routes";
+
+export default function App() {
+  return (
+    <UserContextProvider>
+      <div>
+        <h1>Context</h1>
+        <Routes />
+      </div>
+    </UserContextProvider>
+  );
+}
+```
+
+`UserContext.js`
+
+```jsx
+import { createContext, useContext, useState } from "react";
+
+const UserContext = createContext();
+
+const UserContextProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+
+  const logoff = () => setUser(null);
+  const logon = (user) => setUser(user);
+
+  return (
+    <UserContext.Provider value={{ user, logon, logoff }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
+
+const useUser = () => useContext(UserContext);
+
+export { UserContextProvider, useUser };
+```
+
+`Routes.js`
+
+```jsx
+import { useUser } from "./UserContext";
+
+import Login from "./Login";
+import Profile from "./Profile";
+
+export default function Routes() {
+  const { user } = useUser();
+  return <>{user ? <Profile /> : <Login />}</>;
+}
+```
+
+`Login.js`
+
+```jsx
+import { useUser } from "./UserContext";
+
+export default function Login() {
+  const { logon } = useUser();
+
+  return (
+    <div>
+      <button onClick={() => logon({ username: "João" })}>
+        Logar como João
+      </button>
+      <button onClick={() => logon({ username: "Maria" })}>
+        Logar como Maria
+      </button>
+    </div>
+  );
+}
+```
+
+`Profile.js`
+
+```jsx
+import { useUser } from "./UserContext";
+
+export default function Profile() {
+  const { user, logoff } = useUser();
+
+  return (
+    <div>
+      Usuário logado: {user.username} <button onClick={logoff}>sair</button>
+    </div>
+  );
+}
+```
+
 - [Effect](https://react.dev/reference/react/useEffect)
-- [Memoization](https://react.dev/reference/react/useMemo) e [Callbacks](https://react.dev/reference/react/useCallback)
+
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-effect-g8mc63?file=/src/App.js)
+
+```jsx
+import { useState, useEffect } from "react";
+
+export default function App() {
+  const [pokename, setPokename] = useState(null);
+  const [pokeData, setPokeData] = useState(null);
+
+  // Executa a cada renderização
+  useEffect(() => {
+    console.count("total renders");
+  });
+
+  // Executa somente uma vez
+  useEffect(() => {
+    console.count("init render");
+    setPokename("bulbasaur");
+  }, []);
+
+  // Executa sempre que uma dependência mudar
+  useEffect(() => {
+    console.count("pokemon changed renders");
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokename}`)
+      .then((response) => response.json())
+      .then((data) => setPokeData(data));
+  }, [pokename]);
+
+  return (
+    <div>
+      <h1>Effect</h1>
+      <div>Pokémon: {pokeData?.name}</div>
+      <div>ID: {pokeData?.id}</div>
+      <img src={pokeData?.sprites.front_default} alt="pokemon" />
+      <div>
+        Mudar para{" "}
+        {["pikachu", "snorlax", "clefairy"].map((poke, key) => (
+          <button key={key} onClick={() => setPokename(poke)}>
+            {poke}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+```
+
+Se for necessário verificar se o efeito ainda é relevante, use uma [função de cleanup](https://react.dev/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed).
+
+- [Memoization](https://react.dev/reference/react/useMemo) e [Callback](https://react.dev/reference/react/useCallback)
+
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-memo-callback-j7xjh4?file=/src/App.js)
+
+```js
+import { useMemo, useCallback, useState, useEffect } from "react";
+
+export default function App() {
+  const [base, setBase] = useState(7);
+  const [table, setTable] = useState([]);
+
+  // A tabela é filtrada novamente a cada mudança
+  const evenOnlyTable = useMemo(() => {
+    return table.filter((n) => n % 2 === 0);
+  }, [table]);
+
+  // O código que gera uma nova tabela é recriado a cada mudança de base
+  const generateTable = useCallback(() => {
+    const tableFromBase = [];
+    for (let n = 1; n <= 10; n++) tableFromBase.push(n * base);
+    setTable(tableFromBase);
+  }, [base]);
+
+  // Sempre que a função de geração muda ela é executada
+  useEffect(() => {
+    generateTable();
+  }, [generateTable]);
+
+  return (
+    <div>
+      <h1>Memo e Callback</h1>
+      <div>Tabuada do {base}: </div>
+      {table.map((n, key) => (
+        <span key={key}>{n} </span>
+      ))}
+      <div>Somente pares: </div>
+      {evenOnlyTable.map((n, key) => (
+        <span key={key}>{n} </span>
+      ))}
+      <div>
+        <button onClick={() => setBase(base + 1)}>próximo</button>
+      </div>
+    </div>
+  );
+}
+```
+
 - [Ref](https://react.dev/reference/react/useRef)
+
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-ref-jrkzn5?file=/src/App.js)
+
+```jsx
+import { useRef } from "react";
+
+export default function App() {
+  // Referência a um valor
+  const numberOfClicks = useRef(0);
+  // Referência a um componente
+  const counterRef = useRef(null);
+
+  // Incrementa o valor, exibe o valor e altera o componente
+  const handleClick = () => {
+    numberOfClicks.current = numberOfClicks.current + 1;
+    if (numberOfClicks.current % 4 === 0) {
+      console.log(numberOfClicks.current, "pim");
+    }
+    counterRef.current.innerText = numberOfClicks.current;
+  };
+
+  // Não há novas renderizações, porque não tem estado
+  return (
+    <div>
+      <h1>Ref</h1>
+      <div>
+        Cliques: <span ref={counterRef}></span>
+      </div>
+      <button onClick={handleClick}>click me</button>
+    </div>
+  );
+}
+```
 
 ## React Native
 
