@@ -683,11 +683,114 @@ Ferramentas:
 Tópicos:
 
 - [Componentes multiplataforma](https://reactnative.dev/docs/components-and-apis)
-- [Estilos e `StyleSheet.create`](https://reactnative.dev/docs/style)
-- [Flexbox](https://reactnative.dev/docs/flexbox)
-- [Imagens](https://reactnative.dev/docs/images)
-- [Toque](https://reactnative.dev/docs/handling-touches)
+
+[Ver no Expo Snack](https://snack.expo.dev/@ermogenes/react-101-componentes-multiplataforma?platform=android)
+
+```jsx
+import {
+  View,
+  Text,
+  ScrollView,
+  Button,
+  Alert,
+  Pressable,
+  Image,
+  Linking,
+  StyleSheet,
+} from "react-native";
+
+export default function App() {
+  const numbers = Array.from({ length: 50 }, (value, index) => index + 1);
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.heading}>Componentes multiplataforma</Text>
+
+      <ScrollView style={[styles.container, styles.centered]}>
+        {numbers.map((n, k) => (
+          <Text key={k}>{n}</Text>
+        ))}
+      </ScrollView>
+
+      <Button
+        title="Clique"
+        onPress={() => Alert.alert("Atenção:", "Clicou no botão!")}
+      />
+
+      <Pressable
+        onPress={() =>
+          Linking.openURL("https://github.com/ermogenes/react-101")
+        }
+      >
+        <Image
+          source={require("./assets/snack-icon.png")}
+          style={styles.image}
+        />
+      </Pressable>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, margin: 5 },
+  centered: { alignItems: "center" },
+  heading: { fontSize: 24, fontWeight: "bold" },
+  image: { height: 100, aspectRatio: 1 },
+});
+```
+
 - [Navegação](https://reactnative.dev/docs/navigation) com [React Navigation](https://reactnavigation.org/docs/getting-started)
+
+[Ver no Expo Snack](https://snack.expo.dev/@ermogenes/react-101-navegacao?platform=android)
+
+```jsx
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import { View, Text, StyleSheet, Button } from "react-native";
+
+const MyStack = createNativeStackNavigator();
+
+function HomeScreen({ navigation }) {
+  return (
+    <View style={styles.screenContainer}>
+      <Text>Home</Text>
+      <Button
+        title="Ir para Sobre"
+        onPress={() => navigation.navigate("About")}
+      />
+    </View>
+  );
+}
+
+function AboutScreen({ navigation }) {
+  return (
+    <View style={styles.screenContainer}>
+      <Text>About</Text>
+      <Button title="Voltar" onPress={() => navigation.goBack()} />
+    </View>
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyStack.Navigator>
+        <MyStack.Screen name="Home" component={HomeScreen} />
+        <MyStack.Screen name="About" component={AboutScreen} />
+      </MyStack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+const styles = StyleSheet.create({
+  screenContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
+});
+```
 
 ## Expo
 
