@@ -199,7 +199,7 @@ export default function App() {
 
 - [Estilos (`className`, `style`, ...)](https://react.dev/learn#adding-styles)
 
-[Ver no CodeSandbox](https://codesandbox.io/s/beautiful-shadow-t1wynk?file=/src/App.js)
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-estilos-t1wynk?file=/src/App.js)
 
 `styles.css`
 
@@ -237,7 +237,7 @@ export default function App() {
 
 - [Renderizando dados](https://react.dev/learn#displaying-data)
 
-[Ver no CodeSandbox](https://codesandbox.io/s/rough-resonance-f0r7hd?file=/src/App.js)
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-renderizando-dados-f0r7hd?file=/src/App.js)
 
 ```jsx
 const alinhamento = "center";
@@ -256,11 +256,152 @@ export default function App() {
 }
 ```
 
-- [Renderização condicional](https://react.dev/learn#conditional-rendering)
-- [Renderização de listas](https://react.dev/learn#rendering-lists)
-- [Eventos](https://react.dev/learn#responding-to-events)
-- [State](https://react.dev/learn#updating-the-screen)
 - [Props](https://react.dev/learn#sharing-data-between-components)
+
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-props-4vdlxd?file=/src/App.js)
+
+```jsx
+function EmojiDisplay(props) {
+  const frameStyle = {
+    // estilos omitidos, veja no código completo
+  };
+
+  return (
+    <div style={frameStyle}>
+      <span
+        role="img"
+        aria-label={props.label}
+        title={props.label ?? "um emoji qualquer"}
+      >
+        {props.emoji ?? "❌"}
+      </span>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <div>
+      <h1>Props</h1>
+      <EmojiDisplay emoji="😍" label="cuti cuti" />
+      <EmojiDisplay emoji="💩" label="cocô" />
+      <EmojiDisplay emoji="☕" label="razão de viver" />
+      <EmojiDisplay />
+    </div>
+  );
+}
+```
+
+- [Renderização condicional](https://react.dev/learn#conditional-rendering)
+
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-renderizacao-condicional-6mkzr6?file=/src/App.js)
+
+```jsx
+function SayHello({ to, gender, isCute }) {
+  const boasVindas = `Seja bem-vind${gender === "female" ? "a" : "o"}.`;
+  return (
+    <div>
+      {to ? (
+        <p>
+          Olá, {to}! {boasVindas}
+          {isCute && <span> :)</span>}
+        </p>
+      ) : (
+        <p>Não falo com estranhos.</p>
+      )}
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <div>
+      <h1>Renderização condicional</h1>
+      <SayHello to="Maria" gender="female" isCute />
+      <SayHello />
+      <SayHello to="Mario" gender="male" />
+    </div>
+  );
+}
+```
+
+- [Renderização de listas](https://react.dev/learn#rendering-lists)
+
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-renderizacao-de-listas-fscci4)
+
+```jsx
+export default function App() {
+  const fruits = [
+    { name: "Banana", icon: "🍌" },
+    { name: "Maça", icon: "🍎" },
+    { name: "Laranja", icon: "🍊" },
+    { name: "Morango", icon: "🍓" },
+    { name: "Abacaxi", icon: "🍍" },
+    { name: "Abacate", icon: "🥑" },
+  ];
+
+  fruits.sort((f1, f2) => f1.name.localeCompare(f2.name));
+
+  return (
+    <div>
+      <h1>Renderização de listas</h1>
+      <ul style={{ listStyleType: "none", padding: 0 }}>
+        {fruits?.map((fruit, index) => (
+          <li key={index}>
+            <span>{fruit.icon}</span> {fruit.name}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+- [Eventos](https://react.dev/learn#responding-to-events)
+
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-eventos-oc9jkj?file=/src/App.js:0-298)
+
+```jsx
+export default function App() {
+  const handleClick = (event) =>
+    alert(`Voce clicou em ${event.target.innerText}!`);
+  return (
+    <div>
+      <h1>Eventos</h1>
+      <button onClick={() => alert("Você clicou em 1!")}>1</button>
+      <button onClick={handleClick}>2</button>
+    </div>
+  );
+}
+```
+
+- [State](https://react.dev/learn#updating-the-screen)
+
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-state-eel9wm?file=/src/App.js:0-501)
+
+```jsx
+import { useState } from "react";
+
+export default function App() {
+  const [number, setNumber] = useState(51);
+
+  const increment = () => setNumber(number + 1);
+  const decrement = () => setNumber(number - 1);
+  const valueChanged = (e) => setNumber(Number(e.target.value));
+
+  return (
+    <div>
+      <h1>State</h1>
+      <button onClick={decrement}>&lt;</button>
+      <input type="number" value={number} onChange={valueChanged} />
+      <button onClick={increment}>&gt;</button>
+    </div>
+  );
+}
+```
+
+# TODO: Passando estado em propriedade
+
 - [Context](https://react.dev/learn/passing-data-deeply-with-context)
 - [Effect](https://react.dev/reference/react/useEffect)
 - [Memoization](https://react.dev/reference/react/useMemo) e [Callbacks](https://react.dev/reference/react/useCallback)
