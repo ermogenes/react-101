@@ -332,12 +332,12 @@ export default function App() {
 
 ```jsx
 function SayHello({ to, gender, isCute }) {
-  const boasVindas = `Seja bem-vind${gender === "female" ? "a" : "o"}.`;
+  const welcome = `Seja bem-vind${gender === "female" ? "a" : "o"}.`;
   return (
     <div>
       {to ? (
         <p>
-          Olá, {to}! {boasVindas}
+          Olá, {to}! {welcome}
           {isCute && <span> :)</span>}
         </p>
       ) : (
