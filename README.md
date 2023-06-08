@@ -25,9 +25,7 @@ Ferramentas:
 - [ESLint VsCode extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Prettier VsCode extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-Tópicos:
-
-- [Optional chaining `?.`](https://javascript.info/optional-chaining)
+### [Optional chaining `?.`](https://javascript.info/optional-chaining)
 
 ```js
 // Retorna undefined caso um valor não exista dentro de um objeto
@@ -40,7 +38,7 @@ console.log(y.foo); // exception: y is not defined
 console.log(y?.foo); // exception: y is not defined
 ```
 
-- [Null coalesce](https://javascript.info/nullish-coalescing-operator)
+### [Null coalesce](https://javascript.info/nullish-coalescing-operator)
 
 ```js
 let name = null;
@@ -51,7 +49,7 @@ console.log(socialName ?? name ?? "Anonymous"); // "Anonymous"
 console.log(socialName ?? nickname ?? name ?? "Anonymous"); // "n00b"
 ```
 
-- [Condicional com `&&` (AND)](https://javascript.info/logical-operators#and-finds-the-first-falsy-value) e com [`?:` (`if` ternário)](https://javascript.info/ifelse#conditional-operator)
+### [Condicional com `&&` (AND)](https://javascript.info/logical-operators#and-finds-the-first-falsy-value) e com [`?:` (`if` ternário)](https://javascript.info/ifelse#conditional-operator)
 
 ```js
 const isPolite = true;
@@ -62,7 +60,7 @@ isPolite && console.log("hello"); // exibe "hello"
 isPolite ? console.log("hello") : console.log("f@#$ u"); // exibe "hello"
 ```
 
-- [Desestruturação](https://javascript.info/destructuring-assignment) e [Spread](https://javascript.info/rest-parameters-spread)
+### [Desestruturação](https://javascript.info/destructuring-assignment) e [Spread](https://javascript.info/rest-parameters-spread)
 
 ```js
 // Desestruturando arrays
@@ -103,7 +101,7 @@ fetch("https://api.github.com/users/ermogenes") // retorna uma promise
   .then((result) => console.log(result.company)); // exibe "Prodam"
 ```
 
-- [Métodos funcionais (`map`, `filter`, ...)](https://javascript.info/array-methods)
+### [Métodos funcionais (`map`, `filter`, ...)](https://javascript.info/array-methods)
 
 ```js
 // Transforma cada item em um valor novo
@@ -116,7 +114,9 @@ fetch("https://api.github.com/users/ermogenes") // retorna uma promise
 ["a", "b", "c"].findIndex((n) => n === "b"); // 1
 ```
 
-- [Módulos](https://javascript.info/modules-intro)
+### [Módulos](https://javascript.info/modules-intro)
+
+_Sem exemplos._
 
 ## React
 
@@ -131,9 +131,7 @@ Ferramentas:
 - [ES7+ React/Redux/React-Native snippets VsCode extension](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 - [HTML to JSX converter](https://transform.tools/html-to-jsx)
 
-Tópicos:
-
-- [Componentes](https://react.dev/learn#components) e [JSX](https://react.dev/learn#writing-markup-with-jsx)
+### [Componentes](https://react.dev/learn#components) e [JSX](https://react.dev/learn#writing-markup-with-jsx)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-components-3bsyjg?file=/public/index.html)
 
@@ -198,7 +196,7 @@ export default function App() {
 }
 ```
 
-- [Estilos](https://react.dev/learn#adding-styles)
+### [Estilos](https://react.dev/learn#adding-styles)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-estilos-t1wynk?file=/src/App.js)
 
@@ -236,7 +234,7 @@ export default function App() {
 }
 ```
 
-- [Renderizando dados](https://react.dev/learn#displaying-data)
+### [Renderizando dados](https://react.dev/learn#displaying-data)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-renderizando-dados-f0r7hd?file=/src/App.js)
 
@@ -257,7 +255,7 @@ export default function App() {
 }
 ```
 
-- [Props](https://react.dev/learn#sharing-data-between-components)
+### [Props](https://react.dev/learn#sharing-data-between-components)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-props-4vdlxd?file=/src/App.js)
 
@@ -293,7 +291,7 @@ export default function App() {
 }
 ```
 
-- [Children](https://react.dev/learn#conditional-rendering)
+### [Children](https://react.dev/learn#conditional-rendering)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-children-6u7s3v?file=/src/App.js)
 
@@ -328,7 +326,7 @@ export default function App() {
 }
 ```
 
-- [Renderização condicional](https://react.dev/learn#conditional-rendering)
+### [Renderização condicional](https://react.dev/learn#conditional-rendering)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-renderizacao-condicional-6mkzr6?file=/src/App.js)
 
@@ -361,7 +359,7 @@ export default function App() {
 }
 ```
 
-- [Renderização de listas](https://react.dev/learn#rendering-lists)
+### [Renderização de listas](https://react.dev/learn#rendering-lists)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-renderizacao-de-listas-fscci4)
 
@@ -393,7 +391,7 @@ export default function App() {
 }
 ```
 
-- [Eventos](https://react.dev/learn#responding-to-events)
+### [Eventos](https://react.dev/learn#responding-to-events)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-eventos-oc9jkj?file=/src/App.js)
 
@@ -411,7 +409,7 @@ export default function App() {
 }
 ```
 
-- [State](https://react.dev/learn#updating-the-screen)
+### [State](https://react.dev/learn#updating-the-screen)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-state-eel9wm?file=/src/App.js)
 
@@ -436,7 +434,7 @@ export default function App() {
 }
 ```
 
-- [Context](https://react.dev/learn/passing-data-deeply-with-context)
+### [Context](https://react.dev/learn/passing-data-deeply-with-context)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-context-cqzon4?file=/src/App.js)
 
@@ -535,7 +533,7 @@ export default function Profile() {
 }
 ```
 
-- [Effect](https://react.dev/reference/react/useEffect)
+### [Effect](https://react.dev/reference/react/useEffect)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-effect-g8mc63?file=/src/App.js)
 
@@ -586,7 +584,7 @@ export default function App() {
 
 Se for necessário verificar se o efeito ainda é relevante, use uma [função de cleanup](https://react.dev/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed).
 
-- [Memoization](https://react.dev/reference/react/useMemo) e [Callback](https://react.dev/reference/react/useCallback)
+### [Memoization](https://react.dev/reference/react/useMemo) e [Callback](https://react.dev/reference/react/useCallback)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-memo-callback-j7xjh4?file=/src/App.js)
 
@@ -633,7 +631,7 @@ export default function App() {
 }
 ```
 
-- [Ref](https://react.dev/reference/react/useRef)
+### [Ref](https://react.dev/reference/react/useRef)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-ref-jrkzn5?file=/src/App.js)
 
@@ -680,9 +678,7 @@ Ferramentas:
 - [Projeto local](https://reactnative.dev/docs/environment-setup)
 - [React Native Tools VsCode extension](https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native)
 
-Tópicos:
-
-- [Componentes multiplataforma](https://reactnative.dev/docs/components-and-apis)
+### [Componentes multiplataforma](https://reactnative.dev/docs/components-and-apis)
 
 [Ver no Expo Snack](https://snack.expo.dev/@ermogenes/react-101-componentes-multiplataforma?platform=android)
 
@@ -739,7 +735,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-- [Navegação](https://reactnative.dev/docs/navigation) com [React Navigation](https://reactnavigation.org/docs/getting-started)
+### [Navegação](https://reactnative.dev/docs/navigation) com [React Navigation](https://reactnavigation.org/docs/getting-started)
 
 [Ver no Expo Snack](https://snack.expo.dev/@ermogenes/react-101-navegacao?platform=android)
 
