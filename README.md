@@ -135,7 +135,7 @@ Tópicos:
 
 - [Componentes](https://react.dev/learn#components) e [JSX](https://react.dev/learn#writing-markup-with-jsx)
 
-[Ver no CodeSandbox](https://codesandbox.io/s/react-101-components-3bsyjg?file=/src/App.js)
+[Ver no CodeSandbox](https://codesandbox.io/s/react-101-components-3bsyjg?file=/public/index.html)
 
 `index.html`
 
@@ -198,7 +198,7 @@ export default function App() {
 }
 ```
 
-- [Estilos (`className`, `style`, ...)](https://react.dev/learn#adding-styles)
+- [Estilos](https://react.dev/learn#adding-styles)
 
 [Ver no CodeSandbox](https://codesandbox.io/s/react-101-estilos-t1wynk?file=/src/App.js)
 
