@@ -4,8 +4,8 @@ Primeiros passos com React e React Native
 
 Pré-requisitos
 
-- HTML, CSS, JavaScript
-- Git e GitHub
+- [HTML, CSS, JavaScript](https://github.com/ermogenes/aulas-programacao-web)
+- [Git](https://git-scm.com/) e [GitHub](https://github.com/)
 
 Software:
 
