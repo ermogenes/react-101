@@ -93,7 +93,7 @@ const { id, ...userData } = user;
 console.log(userData); // exibe {age: 25, name: 'Zé'}
 ```
 
-- [Promises](https://javascript.info/promise-basics) e [Fetch API](https://javascript.info/fetch)
+### [Promises](https://javascript.info/promise-basics) e [Fetch API](https://javascript.info/fetch)
 
 ```js
 fetch("https://api.github.com/users/ermogenes") // retorna uma promise
