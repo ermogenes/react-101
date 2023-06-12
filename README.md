@@ -57,11 +57,15 @@ function squareOf2() {
 // Arrow function não tem acesso a 'this'
 const user = {
   name: "Zé",
-  sayHi() { console.log(`Hi, ${this.name}!`) },
-  sayHello: () => { console.log(`Hello, ${this.name}!`) },
+  sayHi() {
+    console.log(`Hi, ${this.name}!`);
+  },
+  sayHello: () => {
+    console.log(`Hello, ${this.name}!`);
+  },
 };
 
-user.sayHi() // Hi, Zé!
+user.sayHi(); // Hi, Zé!
 user.sayHello(); // Hello, !
 ```
 
@@ -156,49 +160,62 @@ fetch("https://api.github.com/users/ermogenes") // retorna uma promise
 
 ### [Módulos](https://javascript.info/modules-intro)
 
-* `export` / `import`
+- `export` / `import`
 
 `modulo.js`
+
 ```js
 export const x = 7;
-export function echo (a) { return a; }
+export function echo(a) {
+  return a;
+}
 ```
 
 `script.js`
+
 ```js
-import { echo, x } from './modulo';
+import { echo, x } from "./modulo";
 ```
 
 `script2.js`
+
 ```js
-import * as Modulo from './modulo';
+import * as Modulo from "./modulo";
 ```
 
-* `export` separado
+- `export` separado
 
 `modulo.js`
+
 ```js
 const x = 7;
-function echo (a) { return a; }
+function echo(a) {
+  return a;
+}
 
 export { echo, x };
 ```
 
 `script.js`
+
 ```js
-import { echo, x } from './modulo';
+import { echo, x } from "./modulo";
 ```
 
-* `default`
+- `default`
 
 `modulo.js`
+
 ```js
-export default function echo (a) { return a; }
+export default function echo(a) {
+  return a;
+}
 ```
 
 `script.js`
+
 ```js
-import echo from './modulo';
+import echo from "./modulo";
 ```
 
 ## React
@@ -888,11 +905,29 @@ Ferramentas:
 Gestão do projeto:
 
 - [Projeto local](https://docs.expo.dev/get-started/installation/)
+
+`npx create-expo-app my-app`
+
 - [Executar no Expo Go (LAN)](https://docs.expo.dev/get-started/expo-go/)
+
+`npx expo start`
+
 - [Executar no Expo Go (Tunnel)](https://docs.expo.dev/more/expo-cli/#tunneling)
+
+`npx expo start --tunnel`
+
 - [Build com EAS Build](https://docs.expo.dev/develop/development-builds/introduction/)
+
+`eas build --profile development --platform android`
+
 - [Deploy com EAS Submit](https://docs.expo.dev/submit/introduction/)
+
+`eas submit -p ios`
+
 - [Prebuild](https://docs.expo.dev/more/expo-cli/#prebuild)
+
+`npx expo prebuild`
+
 - [Build e deploy com AppCenter](https://learn.microsoft.com/pt-br/appcenter/)
 - [Estrutura do projeto](https://docs.expo.dev/develop/project-structure/)
 
