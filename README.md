@@ -156,8 +156,6 @@ fetch("https://api.github.com/users/ermogenes") // retorna uma promise
 
 ### [Módulos](https://javascript.info/modules-intro)
 
-## Modules
-
 * `export` / `import`
 
 `modulo.js`
