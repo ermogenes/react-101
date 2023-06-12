@@ -108,7 +108,7 @@ fetch("https://api.github.com/users/ermogenes") // retorna uma promise
 ["a", "b", "c"].map((n) => n.toUpperCase()); // ['A', 'B', 'C']
 
 // Filtra o arranjo
-[(1, 2, 3, 4, 5)].filter((x) => x % 2 == 0); // [2, 4]
+[1, 2, 3, 4, 5].filter((x) => x % 2 == 0); // [2, 4]
 
 // Encontra o índice de um valor
 ["a", "b", "c"].findIndex((n) => n === "b"); // 1
