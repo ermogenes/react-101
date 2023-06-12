@@ -936,6 +936,8 @@ Utils:
 
 ## Outros
 
+[TypeScript](https://www.typescriptlang.org/)
+
 Navegação:
 
 - [React Navigation](https://reactnavigation.org/docs/getting-started)
