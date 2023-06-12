@@ -25,6 +25,46 @@ Ferramentas:
 - [ESLint VsCode extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Prettier VsCode extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
+### Arrow functions
+
+```js
+// Sintaxe
+const plus = (a, b) => a + b;
+
+const minus = (a, b) => {
+  return a - b;
+};
+
+function multiplication(a, b) {
+  return a * b;
+}
+
+let x = plus(3, minus(2, 1)); // 3 + (2 - 1)
+
+// Hoisting
+let y = squareOf2() * 2; // 1.41 * 2
+
+let z = 2 * pi(); // erro, arrow functions não são elevadas
+
+const pi = () => 3.14;
+
+function squareOf2() {
+  return 1.41;
+}
+```
+
+```js
+// Arrow function não tem acesso a 'this'
+const user = {
+  name: "Zé",
+  sayHi() { console.log(`Hi, ${this.name}!`) },
+  sayHello: () => { console.log(`Hello, ${this.name}!`) },
+};
+
+user.sayHi() // Hi, Zé!
+user.sayHello(); // Hello, !
+```
+
 ### [Optional chaining `?.`](https://javascript.info/optional-chaining)
 
 ```js
