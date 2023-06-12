@@ -25,7 +25,7 @@ Ferramentas:
 - [ESLint VsCode extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Prettier VsCode extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-### Arrow functions
+### [Arrow functions](https://javascript.info/arrow-functions-basics)
 
 ```js
 // Sintaxe
