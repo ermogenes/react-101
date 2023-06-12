@@ -233,7 +233,7 @@ Ferramentas:
 
 ### [Componentes](https://react.dev/learn#components) e [JSX](https://react.dev/learn#writing-markup-with-jsx)
 
-[![](https://img.shields.io/badge/Testar no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-components-3bsyjg?file=/public/index.html)
+[![](https://img.shields.io/badge/Testar%20no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-components-3bsyjg?file=/public/index.html)
 
 `index.html`
 
@@ -298,7 +298,7 @@ export default function App() {
 
 ### [Estilos](https://react.dev/learn#adding-styles)
 
-[![](https://img.shields.io/badge/Testar no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-estilos-t1wynk?file=/src/App.js)
+[![](https://img.shields.io/badge/Testar%20no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-estilos-t1wynk?file=/src/App.js)
 
 `styles.css`
 
@@ -336,7 +336,7 @@ export default function App() {
 
 ### [Renderizando dados](https://react.dev/learn#displaying-data)
 
-[![](https://img.shields.io/badge/Testar no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-renderizando-dados-f0r7hd?file=/src/App.js)
+[![](https://img.shields.io/badge/Testar%20no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-renderizando-dados-f0r7hd?file=/src/App.js)
 
 ```jsx
 const alinhamento = "center";
@@ -357,7 +357,7 @@ export default function App() {
 
 ### [Props](https://react.dev/learn#sharing-data-between-components)
 
-[![](https://img.shields.io/badge/Testar no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-props-4vdlxd?file=/src/App.js)
+[![](https://img.shields.io/badge/Testar%20no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-props-4vdlxd?file=/src/App.js)
 
 ```jsx
 function EmojiDisplay(props) {
@@ -393,7 +393,7 @@ export default function App() {
 
 ### [Children](https://react.dev/learn#conditional-rendering)
 
-[![](https://img.shields.io/badge/Testar no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-children-6u7s3v?file=/src/App.js)
+[![](https://img.shields.io/badge/Testar%20no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-children-6u7s3v?file=/src/App.js)
 
 ```jsx
 const TitleText = ({ color, children }) => (
@@ -428,7 +428,7 @@ export default function App() {
 
 ### [Renderização condicional](https://react.dev/learn#conditional-rendering)
 
-[![](https://img.shields.io/badge/Testar no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-renderizacao-condicional-6mkzr6?file=/src/App.js)
+[![](https://img.shields.io/badge/Testar%20no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-renderizacao-condicional-6mkzr6?file=/src/App.js)
 
 ```jsx
 function SayHello({ to, gender, isCute }) {
@@ -461,7 +461,7 @@ export default function App() {
 
 ### [Renderização de listas](https://react.dev/learn#rendering-lists)
 
-[![](https://img.shields.io/badge/Testar no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-renderizacao-de-listas-fscci4)
+[![](https://img.shields.io/badge/Testar%20no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-renderizacao-de-listas-fscci4)
 
 ```jsx
 export default function App() {
@@ -493,7 +493,7 @@ export default function App() {
 
 ### [Eventos](https://react.dev/learn#responding-to-events)
 
-[![](https://img.shields.io/badge/Testar no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-eventos-oc9jkj?file=/src/App.js)
+[![](https://img.shields.io/badge/Testar%20no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-eventos-oc9jkj?file=/src/App.js)
 
 ```jsx
 export default function App() {
@@ -511,7 +511,7 @@ export default function App() {
 
 ### [State](https://react.dev/learn#updating-the-screen)
 
-[![](https://img.shields.io/badge/Testar no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-state-eel9wm?file=/src/App.js)
+[![](https://img.shields.io/badge/Testar%20no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-state-eel9wm?file=/src/App.js)
 
 ```jsx
 import { useState } from "react";
@@ -536,7 +536,7 @@ export default function App() {
 
 ### [Context](https://react.dev/learn/passing-data-deeply-with-context)
 
-[![](https://img.shields.io/badge/Testar no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-context-cqzon4?file=/src/App.js)
+[![](https://img.shields.io/badge/Testar%20no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-context-cqzon4?file=/src/App.js)
 
 `App.js`
 
@@ -635,7 +635,7 @@ export default function Profile() {
 
 ### [Effect](https://react.dev/reference/react/useEffect)
 
-[![](https://img.shields.io/badge/Testar no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-effect-g8mc63?file=/src/App.js)
+[![](https://img.shields.io/badge/Testar%20no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-effect-g8mc63?file=/src/App.js)
 
 ```jsx
 import { useState, useEffect } from "react";
@@ -686,7 +686,7 @@ Se for necessário verificar se o efeito ainda é relevante, use uma [função d
 
 ### [Memoization](https://react.dev/reference/react/useMemo) e [Callback](https://react.dev/reference/react/useCallback)
 
-[![](https://img.shields.io/badge/Testar no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-memo-callback-j7xjh4?file=/src/App.js)
+[![](https://img.shields.io/badge/Testar%20no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-memo-callback-j7xjh4?file=/src/App.js)
 
 ```js
 import { useMemo, useCallback, useState, useEffect } from "react";
@@ -733,7 +733,7 @@ export default function App() {
 
 ### [Ref](https://react.dev/reference/react/useRef)
 
-[![](https://img.shields.io/badge/Testar no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-ref-jrkzn5?file=/src/App.js)
+[![](https://img.shields.io/badge/Testar%20no-CodeSandbox-yellowgreen)](https://codesandbox.io/s/react-101-ref-jrkzn5?file=/src/App.js)
 
 ```jsx
 import { useRef } from "react";
@@ -780,7 +780,7 @@ Ferramentas:
 
 ### [Componentes multiplataforma](https://reactnative.dev/docs/components-and-apis)
 
-[![](https://img.shields.io/badge/Testar no-Expo Snack-black)](https://snack.expo.dev/@ermogenes/react-101-componentes-multiplataforma?platform=android)
+[![](https://img.shields.io/badge/Testar%20no-Expo%20Snack-black)](https://snack.expo.dev/@ermogenes/react-101-componentes-multiplataforma?platform=android)
 
 ```jsx
 import {
@@ -837,7 +837,7 @@ const styles = StyleSheet.create({
 
 ### [Navegação](https://reactnative.dev/docs/navigation) com [React Navigation](https://reactnavigation.org/docs/getting-started)
 
-[![](https://img.shields.io/badge/Testar no-Expo Snack-black)](https://snack.expo.dev/@ermogenes/react-101-navegacao?platform=android)
+[![](https://img.shields.io/badge/Testar%20no-Expo%20Snack-black)](https://snack.expo.dev/@ermogenes/react-101-navegacao?platform=android)
 
 ```jsx
 import { NavigationContainer } from "@react-navigation/native";
