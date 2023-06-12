@@ -904,30 +904,12 @@ Ferramentas:
 
 Gestão do projeto:
 
-- [Projeto local](https://docs.expo.dev/get-started/installation/)
-
-`npx create-expo-app my-app`
-
-- [Executar no Expo Go (LAN)](https://docs.expo.dev/get-started/expo-go/)
-
-`npx expo start`
-
-- [Executar no Expo Go (Tunnel)](https://docs.expo.dev/more/expo-cli/#tunneling)
-
-`npx expo start --tunnel`
-
-- [Build com EAS Build](https://docs.expo.dev/develop/development-builds/introduction/)
-
-`eas build --profile development --platform android`
-
-- [Deploy com EAS Submit](https://docs.expo.dev/submit/introduction/)
-
-`eas submit -p ios`
-
-- [Prebuild](https://docs.expo.dev/more/expo-cli/#prebuild)
-
-`npx expo prebuild`
-
+- [Projeto local](https://docs.expo.dev/get-started/installation/) `npx create-expo-app my-app`
+- [Executar no Expo Go (LAN)](https://docs.expo.dev/get-started/expo-go/) `npx expo start`
+- [Executar no Expo Go (Tunnel)](https://docs.expo.dev/more/expo-cli/#tunneling) `npx expo start --tunnel`
+- [Build com EAS Build](https://docs.expo.dev/develop/development-builds/introduction/) `eas build --profile development --platform android`
+- [Deploy com EAS Submit](https://docs.expo.dev/submit/introduction/) `eas submit -p ios`
+- [Prebuild](https://docs.expo.dev/more/expo-cli/#prebuild) `npx expo prebuild`
 - [Build e deploy com AppCenter](https://learn.microsoft.com/pt-br/appcenter/)
 - [Estrutura do projeto](https://docs.expo.dev/develop/project-structure/)
 
