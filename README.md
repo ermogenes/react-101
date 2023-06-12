@@ -156,7 +156,52 @@ fetch("https://api.github.com/users/ermogenes") // retorna uma promise
 
 ### [Módulos](https://javascript.info/modules-intro)
 
-_Sem exemplos._
+## Modules
+
+* `export` / `import`
+
+`modulo.js`
+```js
+export const x = 7;
+export function echo (a) { return a; }
+```
+
+`script.js`
+```js
+import { echo, x } from './modulo';
+```
+
+`script2.js`
+```js
+import * as Modulo from './modulo';
+```
+
+* `export` separado
+
+`modulo.js`
+```js
+const x = 7;
+function echo (a) { return a; }
+
+export { echo, x };
+```
+
+`script.js`
+```js
+import { echo, x } from './modulo';
+```
+
+* `default`
+
+`modulo.js`
+```js
+export default function echo (a) { return a; }
+```
+
+`script.js`
+```js
+import echo from './modulo';
+```
 
 ## React
 
