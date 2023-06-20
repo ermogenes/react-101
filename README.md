@@ -223,6 +223,7 @@ import echo from "./modulo";
 Referências:
 
 - https://react.dev/
+- [How A Small Team of Developers Created React.js at Facebook](https://youtu.be/8pDqJVdNa44)
 
 Ferramentas:
 
